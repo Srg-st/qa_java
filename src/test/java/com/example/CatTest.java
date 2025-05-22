@@ -29,13 +29,13 @@ public class CatTest {
 
     @Test
     public void testCatGetFood() throws Exception {
-        Mockito.when(felineMock.eatMeat()).thenReturn(List.of("Хищник"));
-        Assert.assertEquals(List.of("Хищник"), cat.getFood());
+        Mockito.when(felineMock.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
+        Assert.assertEquals(List.of("Животные", "Птицы", "Рыба"), cat.getFood());
     }
     //Выделил отдельно тест на проверку количества вызовов метода eatMeat()
     @Test
     public void testCatGetFoodNumberInvoc() throws Exception {
-        Mockito.when(felineMock.eatMeat()).thenReturn(List.of("Хищник"));
+        Mockito.when(felineMock.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         cat.getFood();
         Mockito.verify(felineMock, Mockito.times(1)).eatMeat();
     }
